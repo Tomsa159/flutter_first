@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
   
 
   void checkboxOnClick(bool? value, Task task) {
-    task.isCompleted = !(value ?? true);
+    task.isCompleted = value!;
   }
 
   @override

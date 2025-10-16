@@ -16,14 +16,15 @@ class Todo extends StatefulWidget {
 }
 
 class _TodoState extends State<Todo> {
-  bool isCompleted = false;
   
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Checkbox(value: widget.task.isCompleted, onChanged: (value) {
-          widget.checkboxOnClick(value, widget.task);
+          setState(() {
+            widget.checkboxOnClick(value, widget.task);
+          });
         },),
         Text(widget.task.name),
       ]
