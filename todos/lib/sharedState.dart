@@ -7,7 +7,7 @@ class SharedState
     super.key,
     required this.color,
     required super.child, 
-    required this.tasks,
+    required this.tasks, 
   });
 
   final Color color;

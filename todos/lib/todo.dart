@@ -4,18 +4,20 @@ import 'package:todos/task.dart';
 class Todo extends StatefulWidget {
   const Todo({
     super.key,
-    required this.task, 
-    required this.checkboxOnClick, 
+    required this.task
   });
 
   final Task task;
-  final void Function(bool? value, Task task) checkboxOnClick;
 
   @override
   State<Todo> createState() => _TodoState();
 }
 
 class _TodoState extends State<Todo> {
+
+  void checkboxOnClick(bool? value, Task task) {
+    task.isCompleted = value!;
+  }
   
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class _TodoState extends State<Todo> {
       children: [
         Checkbox(value: widget.task.isCompleted, onChanged: (value) {
           setState(() {
-            widget.checkboxOnClick(value, widget.task);
+            checkboxOnClick(value, widget.task);
           });
         },),
         Text(widget.task.name),
