@@ -28,7 +28,7 @@ class _TodoState extends State<Todo> {
             checkboxOnClick(value, widget.task);
           });
         },),
-        Text(widget.task.name),
+        Text(widget.task.title),
       ]
     );
   }
